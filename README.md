@@ -25,8 +25,8 @@ Explore the tool here:
 
 ### 💸 Support This Project
 
-If you’d like to support this and future efforts to improve lives, solve problems, or simply make things work better, you can donate here:  
-[Donate via PayPal](https://www.paypal.com/donate/?business=XGG3R5VDNZG7E&no_recurring=0&item_name=Donating+backs+creative+efforts+to+improve+lives%2C+solve+problems%2C+or+simply+make+things+work+better.&currency_code=USD)
+If you’d like to support this and future efforts to improve lives, solve problems, or simply make things work better, you can learn more and support the project here:  
+[Donation Page](https://vverrazzano.github.io/teen-job-radar/donate.html)
 
 Your support helps fuel creative efforts that aim to make life easier, clearer, and more hopeful—one idea at a time.
 
@@ -48,11 +48,3 @@ This project is licensed under the MIT License. You’re free to use, modify, an
 
 Created with care for teens in Porter County, Indiana—and beyond.  
 Special thanks to everyone who believes in youth empowerment, safe workplaces, and the power of a first job.
-
----
-
-### 🙏 Donation Page
-
-Learn more and support the project here:  
-[Donation Page](https://vverrazzano.github.io/teen-job-radar/donate.html)
-
