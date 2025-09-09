@@ -48,3 +48,11 @@ This project is licensed under the MIT License. You’re free to use, modify, an
 
 Created with care for teens in Porter County, Indiana—and beyond.  
 Special thanks to everyone who believes in youth empowerment, safe workplaces, and the power of a first job.
+
+---
+
+### 🙏 Donation Page
+
+Learn more and support the project here:  
+[Donation Page](https://vverrazzano.github.io/teen-job-radar/donate.html)
+
