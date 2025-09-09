@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teen Job Radar System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px auto;
+      max-width: 800px;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    details {
+      margin-bottom: 1.5em;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 0.5em 1em;
+      background: #fafafa;
+    }
+    summary {
+      cursor: pointer;
+      outline: none;
+    }
+    summary h2 {
+      display: inline;
+      font-size: 1.2em;
+    }
+    ul {
+      margin: 0.5em 0 1em 1em;
+    }
+    input[type="checkbox"], input[type="number"] {
+      transform: scale(1.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.5em 0 1em 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    th {
+      background: #f4f4f4;
+      text-align: left;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .button {
+      display: inline-block;
+      margin: 0.5em 0;
+      padding: 10px 15px;
+      background-color: #0078d4;
+      color: white;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Teen Job Radar: Smart First Jobs in Porter County</h1>
+
+  <details open>
+    <summary><h2>1. Safe Employer Checklist</h2></summary>
+    <ul>
+      <li><input type="checkbox"> Background checks required</li>
+      <li><input type="checkbox"> Mentorship or training offered</li>
+      <li><input type="checkbox"> Clear wage and schedule policies</li>
+      <li><input type="checkbox"> Drug-free workplace policy posted</li>
+      <li><input type="checkbox"> Supervisors with youth experience</li>
+    </ul>
+  </details>
+
+  <details open>
+    <summary><h2>2. Skill-Building Scorecard</h2></summary>
+    <table>
+      <tr>
+        <th>Skill Area</th>
+        <th>Description</th>
+        <th>Rating (1–5)</th>
+      </tr>
+      <tr>
+        <td>Communication</td>
+        <td>Customer service, teamwork, conflict resolution</td>
+        <td><input type="number" min="1" max="5" style="width:50px;"></td>
+      </tr>
+      <tr>
+        <td>Tech Literacy</td>
+        <td>POS systems, scheduling apps, inventory tools</td>
+        <td><input type="number" min="1" max="5" style="width:50px;"></td>
+      </tr>
+      <tr>
+        <td>Leadership</td>
+        <td>Mentoring, training others, taking initiative</td>
+        <td><input type="number" min="1" max="5" style="width:50px;"></td>
+      </tr>
+      <tr>
+        <td>Responsibility</td>
+        <td>Time management, accountability, reliability</td>
+        <td><input type="number" min="1" max="5" style="width:50px;"></td>
+      </tr>
+      <tr>
+        <td>Safety Awareness</td>
+        <td>CPR, food safety, workplace protocols</td>
+        <td><input type="number" min="1" max="5" style="width:50px;"></td>
+      </tr>
+    </table>
+  </details>
+
+  <details open>
+    <summary><h2>3. Wage vs. Growth Potential (Live Listings)</h2></summary>
+    <p id="location-note" style="font-weight: bold; color: #333;">Loading location-based jobs...</p>
+    <p style="font-size: 0.9em; color: #aa0000;">
+      <em>Note: If you're using a VPN, school network, or device settings that make it look like you're in another city, state, or country, the job results may show listings for the wrong area. For the most accurate results, open this page on a device with location services turned on or from your home network.</em>
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Job Title</th>
+          <th>Starting Wage</th>
+          <th>Raises/Promotions</th>
+          <th>Transferable Skills</th>
+          <th>Career Alignment</th>
+        </tr>
+      </thead>
+      <tbody id="job-table-body">
+        <tr><td colspan="5">Loading current jobs...</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 0.9em; color: #555;">
+      <em>Job listings sourced from <a href="https://www.indeed.com" target="_blank">Indeed</a>, <a href="https://www.snagajob.com" target="_blank">Snagajob</a>, and <a href="https://www.careerbuilder.com" target="_blank">CareerBuilder</a>. If listings don’t appear, try opening this page in Firefox or Edge for full functionality.</em>
+    </p>
+  </details>
+
+  <details open>
+  <summary><h2>4. Live Job Search Buttons (5-Mile Radius)</h2></summary>
+  <a class="button" id="btn-indeed" target="_blank">Teen Jobs – Indeed</a><br>
+  <a class="button" id="btn-zip" target="_blank">Teen Jobs – ZipRecruiter</a><br>
+  <a class="button" id="btn-snag" target="_blank">Teen Jobs – Snagajob</a><br>
+  <a class="button" id="btn-careerbuilder" target="_blank">Teen Jobs – CareerBuilder</a>
+</details>
+
+  <details open>
+    <summary><h2>5. Interview Prep & Gut Check</h2></summary>
+    <h3>Questions to Ask</h3>
+    <ul>
+      <li>“What kind of training do you offer?”</li>
+      <li>“Who will I report to, and how often do we check in?”</li>
+      <li>“Is there a drug-free workplace policy?”</li>
+    </ul>
+    <h3>Red Flags</h3>
+    <ul>
+      <li>Vague answers about safety or supervision</li>
+      <li>Pressure to work off the books</li>
+      <li>Inconsistent scheduling or pay structure</li>
+    </ul>
+    <h3>Gut Check Tips</h3>
+    <ul>
+      <li>Trust your instincts</li>
+      <li>Talk it through with a parent or mentor</li>
+      <li>You’re allowed to say no—even after accepting an offer</li>
+    </ul>
+  </details>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("https://geolocation-db.com/json/")
+      .then(response => response.json())
+      .then(location => {
+        const city = location.city || "your area";
+        const state = location.state || "your state";
+        document.getElementById("location-note").innerText =
+          `Showing job listings for teens near ${city}, ${state}.`;
+
+        const cityEncoded = encodeURIComponent(city);
+        const stateEncoded = encodeURIComponent(state);
+        const locationParam = `${cityEncoded}%2C+${stateEncoded}`;
+
+        // Section 3: Dynamic job listings
+        const jobs = [
+          {
+            title: "Grocery Store Cashier (Evenings)",
+            wage: "$13/hr",
+            promotions: "Yes",
+            skills: "POS systems, customer service, accuracy",
+            career: "Retail, Accounting",
+            link: `https://www.indeed.com/jobs?q=Cashier&l=${locationParam}`
+          },
+          {
+            title: "Park Maintenance Crew (Seasonal)",
+            wage: "$14/hr",
+            promotions: "No",
+            skills: "Landscaping, safety awareness, teamwork",
+            career: "Environmental Services, Public Works",
+            link: `https://www.ziprecruiter.com/Jobs/Park-Maintenance/-in-${cityEncoded},${stateEncoded}`
+          },
+          {
+            title: "Fast Food Team Member (Part-Time)",
+            wage: "$12.50/hr",
+            promotions: "Yes",
+            skills: "Multitasking, food safety, customer interaction",
+            career: "Hospitality, Culinary Arts",
+            link: `https://www.snagajob.com/search?q=Fast+Food&l=${locationParam}`
+          },
+          {
+            title: "Retail Stock Associate (Weekend Shift)",
+            wage: "$13.25/hr",
+            promotions: "Yes",
+            skills: "Inventory, organization, time management",
+            career: "Business, Logistics",
+            link: `https://www.careerbuilder.com/jobs?keywords=Stock+Associate&location=${locationParam}`
+          }
+        ];
+
+        const table = document.getElementById("job-table-body");
+        if (table) {
+          table.innerHTML = "";
+          jobs.forEach(job => {
+            const row = `<tr>
+              <td><a href="${job.link}" target="_blank">${job.title}</a></td>
+              <td>${job.wage}</td>
+              <td>${job.promotions}</td>
+              <td>${job.skills}</td>
+              <td>${job.career}</td>
+            </tr>`;
+            table.innerHTML += row;
+          });
+        }
+
+        // Section 4: Update job search buttons
+        document.getElementById("btn-indeed").href =
+          `https://www.indeed.com/jobs?q=Teen&l=${locationParam}&radius=5`;
+        document.getElementById("btn-zip").href =
+          `https://www.ziprecruiter.com/Jobs/Teen/-in-${cityEncoded},${stateEncoded}?radius=5`;
+        document.getElementById("btn-snag").href =
+          `https://www.snagajob.com/search?q=Teen&l=${locationParam}&radius=5`;
+        document.getElementById("btn-careerbuilder").href =
+          `https://www.careerbuilder.com/jobs?keywords=Teen&location=${locationParam}&radius=5`;
+      })
+      .catch(() => {
+        document.getElementById("location-note").innerText =
+          `Showing job listings for your area. (Location could not be detected)`;
+      });
+  });
+</script>
+
+<footer style="text-align: center; margin-top: 40px; font-size: 0.9em; color: #666;">
+  <p><strong>Teen Job Radar</strong> — Helping teens take their first step into the workforce with confidence, clarity, and local insight.</p>
+  <p>
+    View the project on 
+    <a href="https://github.com/YOUR_USERNAME/teen-job-radar" target="_blank">GitHub</a> |
+    <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank">Support via PayPal</a>
+  </p>
+</footer>
+
